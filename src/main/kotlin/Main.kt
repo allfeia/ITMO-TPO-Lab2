@@ -9,7 +9,8 @@ fun main() {
         start = -5.0,
         end = 0.0,
         step = 0.1,
-        func = { x -> TrigSystem.calculate(x) }
+        eps = 1e-6,
+        func = { x, eps -> TrigSystem().calculate(x, eps) }
     )
 
 }

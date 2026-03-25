@@ -8,13 +8,19 @@ object CsvWriter {
         start: Double,
         end: Double,
         step: Double,
-        func: (Double) -> Double
+        eps: Double = 1e-6,
+        func: (Double, Double) -> Double
     ) {
         File(filename).bufferedWriter().use { writer ->
             writer.write("x,result\n")
             var x = start
-            while (x <= end) {
-                writer.write("$x,${func(x)}\n")
+            while (x <= end + step/2) {
+                try {
+                    val result = func(x, eps)
+                    writer.write("$x,$result\n")
+                } catch (e: ArithmeticException) {
+                    writer.write("$x,NaN\n")
+                }
                 x += step
             }
         }
