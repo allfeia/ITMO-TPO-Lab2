@@ -1,7 +1,7 @@
 package org.example.trig.baseFunctions
 
 abstract class ReducibleTrigFunction: TrigFunction {
-    protected fun reduce(x: Double): Double {
+    private fun reduce(x: Double): Double {
         var reduced = x % (2 * Math.PI)
         if (reduced > Math.PI) reduced -= 2 * Math.PI
         if (reduced < -Math.PI) reduced += 2 * Math.PI
