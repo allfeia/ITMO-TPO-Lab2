@@ -5,6 +5,7 @@ import org.mockito.kotlin.whenever
 import kotlin.math.pow
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import org.mockito.kotlin.any
 
 class SystemTestIntegration {
     @Test
@@ -13,7 +14,7 @@ class SystemTestIntegration {
 
         whenever(trig.calculate(any(), any())).thenReturn(999.0)
 
-        val system = System(trig)
+        val system = System()
 
         val x = 2.0
         val result = system.calculate(x)
