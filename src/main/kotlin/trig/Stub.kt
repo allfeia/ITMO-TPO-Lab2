@@ -1,8 +1,9 @@
 package org.example.trig
 
+import org.example.trig.baseFunctions.TrigFunction
 import java.io.File
 
-class Stub(fileName: String) {
+class Stub(fileName: String): TrigFunction {
 
     private val table: Map<Double, Double>
 
@@ -18,7 +19,7 @@ class Stub(fileName: String) {
             }
     }
 
-    fun calculate(x: Double): Double {
+    override fun calculate(x: Double, eps: Double): Double {
         return table[x] ?: Double.NaN
     }
 }
