@@ -1,3 +1,4 @@
+import org.example.log.Ln
 import org.example.log.Log
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
@@ -18,7 +19,7 @@ class LogTest {
         delimiter = ';'
     )
     fun testTable(x: Double, base: Double, expected: Double) {
-        assertEquals(expected, Log.calculate(x, base, eps), eps)
+        assertEquals(expected, Log(Ln).calculate(x, base, eps), eps)
     }
 
     @ParameterizedTest
@@ -26,13 +27,13 @@ class LogTest {
     fun testInvalid(x: Double) {
         assertAll(
             {assertThrows(IllegalArgumentException::class.java) {
-                Log.calculate(x, 2.0, 1e-6)
+                Log(Ln).calculate(x, 2.0, 1e-6)
             }}, // аргумент вне ОДЗ
             {assertThrows(IllegalArgumentException::class.java) {
-                Log.calculate(-x, 1.0, 1e-6)
+                Log(Ln).calculate(-x, 1.0, 1e-6)
             }}, // основание вне ОДЗ
             {assertThrows(IllegalArgumentException::class.java) {
-                Log.calculate(-x, x, 1e-6)
+                Log(Ln).calculate(-x, x, 1e-6)
             }} // основание вне ОДЗ
         )
     }
