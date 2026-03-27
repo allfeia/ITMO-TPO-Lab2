@@ -1,5 +1,8 @@
 package org.example
 
+import org.example.log.Ln
+import org.example.log.Log
+import org.example.log.LogSystem
 import org.example.trig.CsvWriter
 import org.example.trig.Stub
 import org.example.trig.TrigSystem
@@ -17,6 +20,6 @@ fun main() {
 //
 //    val sinStub = Stub("sin.csv")
 //    val result = sinStub.calculate(-0.10000000000000103)
-    println(Sec().calculate(1.91, 1e-6))
+    println(LogSystem(Ln, Log(Ln)).calculate(3.0))
 
 }
