@@ -1,5 +1,6 @@
-package org.example.trig.baseFunctions
+package org.example.trig.baseFunctions.trig
 
+import org.example.trig.baseFunctions.Sin
 import kotlin.math.PI
 import kotlin.test.Test
 import kotlin.test.assertEquals

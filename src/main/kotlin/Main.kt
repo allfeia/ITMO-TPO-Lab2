@@ -1,8 +1,5 @@
 package org.example
 
-import org.example.trig.CsvWriter
-import org.example.trig.Stub
-import org.example.trig.TrigSystem
 import org.example.trig.baseFunctions.Sec
 
 fun main() {
